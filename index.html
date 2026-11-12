@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>LittleSteps — Childcare Center Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><span class="brand-sun">✿</span></div>
+        <div><strong>LittleSteps</strong><small>CHILDCARE CENTER</small></div>
+      </div>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="navigation" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-link" data-page="children"><span class="nav-icon">♧</span> Child Profiles</button>
+        <button class="nav-link" data-page="guardians"><span class="nav-icon">♙</span> Guardians</button>
+        <button class="nav-link" data-page="attendance"><span class="nav-icon">◷</span> Attendance</button>
+        <button class="nav-link" data-page="pickup"><span class="nav-icon">↗</span> Authorized Pickup</button>
+        <button class="nav-link" data-page="activities"><span class="nav-icon">✳</span> Daily Activities</button>
+        <button class="nav-link" data-page="meals"><span class="nav-icon">♨</span> Meal Records</button>
+        <button class="nav-link" data-page="health"><span class="nav-icon">♡</span> Health Records</button>
+        <button class="nav-link" data-page="notifications"><span class="nav-icon">♧</span> Notifications <span class="nav-count" id="notificationCount">0</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Keep your center running smoothly, one little step at a time.</p><button id="helpButton">Quick guide <span>→</span></button></div>
+        <div class="profile-mini"><div class="avatar avatar-purple">AM</div><div><strong>Alex Morgan</strong><small>Center Administrator</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><div><div class="eyebrow" id="todayLabel">THURSDAY, NOVEMBER 12</div><h1 id="pageTitle">Good morning, Alex <span class="wave">✦</span></h1></div></div>
+        <div class="topbar-actions"><label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search children, records..."></label><button class="icon-button" id="topNotifications" aria-label="Notifications">♧<i></i></button><div class="avatar avatar-purple">AM</div></div>
+      </header>
+
+      <section class="page-content" id="pageContent"></section>
+      <footer class="footer-note">LittleSteps <span>•</span> Childcare Center Management <span>•</span> Demo workspace</footer>
+    </main>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><div class="eyebrow">LITTLESTEPS WORKSPACE</div><h2 id="modalTitle">Add record</h2></div><button class="icon-button close-modal" aria-label="Close">×</button></div>
+      <form id="recordForm"><div id="modalFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="btn btn-light close-modal">Cancel</button><button type="submit" class="btn btn-primary" id="saveRecord">Save record <span>→</span></button></div></form>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
